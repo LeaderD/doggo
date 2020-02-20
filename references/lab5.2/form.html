@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title> Week 5.2 </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h2> Add an Artwork </h2>
+        <form action="artwork.php" method="POST" style="display:flex; flex-direction: column; width: 20%;"> 
+            <input type="text" name="artName" placeholder="Name">
+            <input type="text" name="artDesc" placeholder="Description">
+            <input type="text" name="artYear" placeholder="Year">
+            <select name="artType">
+                <option value="Select"> Select Type </option>
+                <option value="Painting"> Painting </option>
+                <option value="Sculpture"> Sculpture </option>
+            </select>
+            <input type="text" name="artPrice" placeholder="Price">
+            <input type="submit" name="submit" value="Add Artwork">
+        </form>
+        <h2> Add an Artist </h2>
+        <form action="artists.php" method="POST" style="display:flex; flex-direction: column; width: 20%;"> 
+            <input type="text" name="FirstName" placeholder="First Name">
+            <input type="text" name="LastName" placeholder="Last Name">
+            <input type="text" name="BirthYear" placeholder="Birth Year">
+            <input type="text" name="DeathYear" placeholder="Death Year">
+            <input type="submit" name="submit" value="Add Artist"> 
+        </form>
+        </body>
+        </html>
