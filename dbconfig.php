@@ -1,6 +1,6 @@
 <?php
 
-$hostname = "localhost";
+    $hostname = "localhost";
     $databasename = "doggo";
     $databaseuser = "root";
     $databasepw = "123";
