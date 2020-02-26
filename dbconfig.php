@@ -7,3 +7,4 @@ $hostname = "localhost";
 
 interface Database {
    public function connection($hostname, $databaseuser, $databasepw, $databasename);
+}

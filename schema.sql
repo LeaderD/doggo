@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2020 at 08:23 PM
+-- Generation Time: Feb 26, 2020 at 01:36 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -37,19 +37,17 @@ CREATE TABLE `doggos` (
   `gender` varchar(255) NOT NULL,
   `size` varchar(255) NOT NULL,
   `coat` varchar(255) NOT NULL,
-  `description` text NOT NULL
+  `description` text NOT NULL,
+  `deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `users`
+-- Dumping data for table `doggos`
 --
 
-CREATE TABLE `users` (
-  `username` varchar(20) NOT NULL,
-  `pw` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `doggos` (`id`, `img`, `name`, `breed`, `age`, `gender`, `size`, `coat`, `description`, `deleted`) VALUES
+(2, 'https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg?w=1155&h=1541', 'Billy', 'Cocker Spaniel', '7', 'Male', 'Medium', 'Medium', 'it\'s a DOG AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA ok ', 0),
+(3, 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1094874726.png?crop=0.542xw:0.814xh;0.0472xw,0.127xh&resize=640:*', 'Brown', 'Australian Shepherd', '2', 'Female', 'Small', 'Long', 'Wow look at this DOGGGO hAWT DIGGITY', 0);
 
 --
 -- Indexes for dumped tables
@@ -69,7 +67,7 @@ ALTER TABLE `doggos`
 -- AUTO_INCREMENT for table `doggos`
 --
 ALTER TABLE `doggos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

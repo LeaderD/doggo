@@ -1,6 +1,6 @@
 <?php
 
-include ('dbconfig');
+include ('dbconfig.php');
 
 class Doggo implements Database{
     private $img;
@@ -10,8 +10,7 @@ class Doggo implements Database{
     private $gender;
     private $size;
     private $coat;
-    private $description
-}
+    private $description;
 
 public function __construct($img, $name, $breed, $age, $gender, $size, $coat, $description){
     $this -> img = $img;
@@ -21,13 +20,14 @@ public function __construct($img, $name, $breed, $age, $gender, $size, $coat, $d
     $this -> gender = $gender;
     $this -> size = $size;
     $this -> coat = $coat;
-    $this -> description = $description
+    $this -> description = $description;
 }
 
 public function connection($hostname, $databaseuser, $databasepw, $databasename){
     $connection = mysqli_connect($hostname, $databaseuser, $databasepw, $databasename);
     return $connection;
 } 
+}
 
 if(isset($_POST['submit'])){
     $img = $_POST['img'];
@@ -39,6 +39,7 @@ if(isset($_POST['submit'])){
     $coat = $_POST['coat'];
     $description = $_POST['description'];
 }
+
 
 ?>
 <!DOCTYPE html>
