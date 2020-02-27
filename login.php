@@ -1,49 +1,75 @@
 <?php
+//session_start();
+include('dbconfig.php');
 
-include ('dbconfig.php');
+if(isset($_POST['submit'])){
+    $username = $_POST['username'];
+    $userpassword = $_POST['password'];
 
-session_start();
-$connection = mysqli_connect($hostname, $databaseuser, $databasepw, $databasename);
-if ( mysqli_connect_errno() ) {
-	// If there is an error with the connection, stop the script and display the error.
-	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
-}
+    // echo "haha ";
+    // echo "</br>";
+    // echo $username;
+    // echo "</br>";
+    // echo $userpassword;
+    // echo "</br>";
+    $connection = mysqli_connect($hostname, $databaseuser, $databasepw, $databasename);
 
-// if(!isset($_POST['username'], $_POST['password'])){
-//     die('Please enter a username and password.');
-// }
+    // if($stmt = $connection->prepare("SELECT id, password FROM users WHERE username = ?")){
+    //     $stmt->bind_param("s", $_POST['username']);
+    //     $stmt->execute();
+    //     $stmt->store_result();
+    //     echo "usr exist";
+    // } else {
+    //     echo "pen";
+    // }
 
-if($stmt = $connection->prepare('SELECT password FROM users WHERE username = ?')){
-    $stmt->bind_param('s', $_POST['username']);
+    $stmt = $connection->prepare("SELECT id, username FROM users WHERE username = ?");
+
+    $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
 
-    $stmt->close();
-}
-
-if($stmt->num_rows > 0){
-    $stmt->bind_result($password);
-    $stmt->fetch();
-
-    if(password_verify($_POST['password'], $passwor)){
-        session_regenerate_id();
-        $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $_POST['username'];
-
-        echo 'Welcome' .$_SESSION['username'].'!';
+        if($stmt->num_rows > 0){
+            $stmt->bind_result($id, $password);
+            $stmt->fetch();
+            // echo "</br> bind pw is: ";
+            // echo $password ;
+            // echo "</br> user entered password is ";
+            // echo $userpassword;
+            // echo "</br>";
+            if($userpassword === $password) {
+                echo 'Welcome '.$username .'!';
+            } else {
+                echo 'Incorrect password!';
+            }
+            // $password = settype($password,"string");
+            // $realpassword = settype($realpassword,"string");
+            // if(password_verify($password, $realpassword)){
+            //     session_regenerate_id();
+            //     $_SESSION['loggedin'] = TRUE;
+            //     $_SESSION['username'] = $_POST['username'];
+            //     $_SESSION['id'] = $_POST['id'];
+            //     echo 'Welcome' .$_SESSION['username'].'!';
+            // } else {
+            //     echo 'Incorrect password!';
+            // }
+        } else {
+            echo 'This user does not exist.';
+        }
+        $stmt->close();
     } else {
-        echo 'Incorrect password!';
+        echo "u didnt write anything nob";
     }
-} else {
-    echo 'This user does not exist.';
-}
+
 ?>
 
 <!DOCTYPE html>
 <html>
     <body>
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="pw" placeholder="Password">
-        <input type="submit" name="submit" value="Login">
-</body>
+        <form action="login.php" method="POST">
+            <input  type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" name="submit">
+        </form>
+    </body>
 </html>
