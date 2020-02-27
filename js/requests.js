@@ -3,23 +3,24 @@ function login(data) {
     return $.ajax({
       method: 'POST',
       data: data,
-      url: 'php/login.php'
+      url: 'login.php'
     })
   }
 
 // Get all dogs in an array
 function getAllDogs(){
     return $.ajax({
-        url: 'php/fetchDoggo.php',
+        url: 'fetchDoggo.php',
         method: 'GET'
       })
 }
 
 // Get one dog
-function getDog(id){
+function getDog(){
     return $.ajax({
-        url: `php/getDog.php?id=${id}`,
-        method: 'GET'
+        url: `getDog.php`,
+        method: 'GET',
+        // data: id
       })
 }
 
@@ -28,6 +29,6 @@ function createProfile(data){
     return $.ajax({
         method: 'POST',
         data: data,
-        url: 'php/addDoggo.php'
+        url: 'addDoggo.php'
       })
 }
