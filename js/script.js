@@ -37,20 +37,20 @@ function displayProfile(alldogs){
 }
 
 // setup single profile
-function setupProfile(dog){
-    // create the profile
-    const profile = Profile(dog)
-    // show side bar when it's clicked on
-    profile.find('browse-container').on('click',
-    function(){
-        // get the dog's detail profile
-        getDog(dog.id)
-        .then(dog => {
-            // insert the profile into sidebar
-            const sidebar = SideBar(dog)
-            // sidebar slides in
-            $('sidebar-container').empty().append(sidebar)
-        })
-    })
-    return profile;
-}
+// function setupProfile(dog){
+//     // create the profile
+//     const profile = Profile(dog)
+//     // show side bar when it's clicked on
+//     profile.find('browse-container').on('click',
+//     function(){
+//         // get the dog's detail profile
+//         getDog(dog.id)
+//         .then(dog => {
+//             // insert the profile into sidebar
+//             const sidebar = SideBar(dog)
+//             // sidebar slides in
+//             $('sidebar-container').empty().append(sidebar)
+//         })
+//     })
+//     return profile;
+// }
