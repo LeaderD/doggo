@@ -1,41 +1,65 @@
 <?php
-session_start();
-
+//session_start();
 include('dbconfig.php');
 
-$connection = mysqli_connect($hostname, $databaseuser, $databasepw, $databasename);
-if (!$connection) {
-	// If there is an error with the connection, stop the script and display the error.
-    die ('Failed to connect to MySQL: ' . mysqli_connect_error());
-}
+if(isset($_POST['submit'])){
+    $username = $_POST['username'];
+    $userpassword = $_POST['password'];
 
-if($stmt = $connection->prepare('SELECT id, password FROM users WHERE username = ?')){
-    $stmt->bind_param('s', $_POST['username']);
+    // echo "haha ";
+    // echo "</br>";
+    // echo $username;
+    // echo "</br>";
+    // echo $userpassword;
+    // echo "</br>";
+    $connection = mysqli_connect($hostname, $databaseuser, $databasepw, $databasename);
+
+    // if($stmt = $connection->prepare("SELECT id, password FROM users WHERE username = ?")){
+    //     $stmt->bind_param("s", $_POST['username']);
+    //     $stmt->execute();
+    //     $stmt->store_result();
+    //     echo "usr exist";
+    // } else {
+    //     echo "pen";
+    // }
+
+    $stmt = $connection->prepare("SELECT id, username FROM users WHERE username = ?");
+
+    $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
 
-    if($stmt->num_rows > 0){
-        $stmt->bind_result($password);
-        $stmt->fetch();
-    
-        if(password_verify($_POST['password'], $password)){
-            session_regenerate_id();
-            $_SESSION['loggedin'] = TRUE;
-            $_SESSION['username'] = $_POST['username'];
-    
-            echo 'Welcome' .$_SESSION['username'].'!';
+        if($stmt->num_rows > 0){
+            $stmt->bind_result($id, $password);
+            $stmt->fetch();
+            // echo "</br> bind pw is: ";
+            // echo $password ;
+            // echo "</br> user entered password is ";
+            // echo $userpassword;
+            // echo "</br>";
+            if($userpassword === $password) {
+                echo 'Welcome '.$username .'!';
+            } else {
+                echo 'Incorrect password!';
+            }
+            // $password = settype($password,"string");
+            // $realpassword = settype($realpassword,"string");
+            // if(password_verify($password, $realpassword)){
+            //     session_regenerate_id();
+            //     $_SESSION['loggedin'] = TRUE;
+            //     $_SESSION['username'] = $_POST['username'];
+            //     $_SESSION['id'] = $_POST['id'];
+            //     echo 'Welcome' .$_SESSION['username'].'!';
+            // } else {
+            //     echo 'Incorrect password!';
+            // }
         } else {
-            echo 'Incorrect password!';
+            echo 'This user does not exist.';
         }
+        $stmt->close();
     } else {
-        echo 'This user does not exist.';
+        echo "u didnt write anything nob";
     }
-    $stmt->close();
-}
-
-if(!isset($_POST['username'], $_POST['password'])){
-    die('Please enter a username and password.');
-}
 
 ?>
 
@@ -43,9 +67,9 @@ if(!isset($_POST['username'], $_POST['password'])){
 <html>
     <body>
         <form action="login.php" method="POST">
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="pw" placeholder="Password">
-        <input type="submit" name="submit" value="Login">
-</form>
-</body>
+            <input  type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" name="submit">
+        </form>
+    </body>
 </html>

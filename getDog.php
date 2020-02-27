@@ -3,11 +3,17 @@
 include('dbconfig.php');
 $connection = mysqli_connect($hostname, $databaseuser, $databasepw, $databasename);
 
-$query = "SELECT id, img, name, breed, age, gender, size, coat, description FROM doggos";
-$result = mysqli_query($connection, $query);
-$json = json_encode($result);
+$dogArray = array();
 
-echo $json;
+if($result = $connection->query("SELECT id FROM doggos")){
+    while($row = $result->fetch_array(MYSQLI_ASSOC)){
+        $dogArray[] = $row;
+    }
+    echo json_encode($dogArray);
+}
+
+$result->close();
+$connection->close();
 ?>
 
 <!DOCTYPE html>
