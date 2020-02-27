@@ -1,6 +1,6 @@
 <?php
 
-include ('dbconfig.php');
+include('dbconfig.php');
 
 class Doggo implements Database{
     private $img;
