@@ -4,6 +4,10 @@ session_start();
 include('dbconfig.php');
 
 $connection = mysqli_connect($hostname, $databaseuser, $databasepw, $databasename);
+if (!$connection) {
+	// If there is an error with the connection, stop the script and display the error.
+    die ('Failed to connect to MySQL: ' . mysqli_connect_error());
+}
 
 if($stmt = $connection->prepare('SELECT id, password FROM users WHERE username = ?')){
     $stmt->bind_param('s', $_POST['username']);
