@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+
+body {
+  font-family: 'PT Sans', sans-serif;
+}
 
 .logo-name {
   position: absolute;
@@ -34,18 +39,31 @@ li a:hover {
   box-sizing: border-box;
 }
 
-.column {
+/* .column {
   float: left;
   width: 25%;
   padding: 0 10px;
   margin-top:50px;
+} */
+
+#all-dogs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 50px auto;
+  max-width: 1000px;
+  column-gap: 20px;
+  row-gap: 20px;
 }
 
-.row:after {
+.row {
+  width: 100%;
+  height: auto;
+}
+/* .row:after {
   content: "";
   display: table;
   clear: both;
-}
+} */
 
 
 @media screen and (max-width: 600px) {
@@ -64,11 +82,16 @@ li a:hover {
   cursor: pointer;
 }
 
-.responsive {
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+/* .responsive {
   width: 100%;
   max-width: 400px;
   height: auto;
-}
+} */
 
 .sidebar {
   height: 100%;

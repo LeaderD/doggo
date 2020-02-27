@@ -2,12 +2,15 @@
 
 include('dbconfig.php');
 $connection = mysqli_connect($hostname, $databaseuser, $databasepw, $databasename);
+// $_POST = json_decode(file_get_contents("php://input"), true);
 
 $dogArray = array();
+// echo json_encode($_POST);
 
-if($result = $connection->query("SELECT id FROM doggos")){
+if($result = $connection->query("SELECT * FROM doggos where id=1")){
     while($row = $result->fetch_array(MYSQLI_ASSOC)){
-        $dogArray[] = $row;
+        // $dogArray[] = $row;
+        $dogArray = $row;
     }
     echo json_encode($dogArray);
 }
@@ -15,10 +18,3 @@ if($result = $connection->query("SELECT id FROM doggos")){
 $result->close();
 $connection->close();
 ?>
-
-<!DOCTYPE html>
-<html>
-    <body>
-
-    </body>
-</html>
