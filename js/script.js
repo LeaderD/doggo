@@ -1,4 +1,8 @@
+const $allDogs = $('all-dogs');
+
 function openSB(dogID) {
+    const SBcontent = SideBar(dogID);
+    document.getElementById("sidebarpopup").innerHTML = SBcontent;
     document.getElementById("sidebarpopup").style.width = "550px";
     document.getElementById("main").style.marginLeft = "550px";
   }
@@ -25,10 +29,10 @@ getAllDogs()
 
 // Loop thru array of dogs and display profiles on the page
 function displayProfile(alldogs){
-    $browseContainer.empty()
+    $allDogs.empty()
     for (const dog of alldogs) {
         const profile = setupProfile(dog)
-        $browseContainer.append(profile)
+        $allDogs.append(profile)
     }
 }
 

@@ -16,14 +16,18 @@ function Profile(dog) {
 
 function SideBar(dog){
     return $(`
-    ${dog.img}
-    ${dog.name}
-    ${dog.gender}
-    ${dog.age}
-    ${dog.size}
-    ${dog.bread}
-    ${dog.fur}
-    ${dog.desc}
+<a href="javascript:void(0)" class="closebtn" onclick="closeSB()">×</a>
+  <img src=" ${dog.img}" width="550">
+  <h1 class="name_breed"> ${dog.name} - ${dog.bread} </h1>
+  <h3 class="name_breed">  ${dog.age} old • ${dog.gender} • ${dog.fur} • ${dog.size}</h3>
+  <br>
+  <h2 class="about"> About </h2>
+  <p>${dog.desc}</p>
+  <br>
+  <br>
+  <button type="button" class="button"> Adopt Me!  </button>
+  <br>
+  <br>
     `)
 }
 
