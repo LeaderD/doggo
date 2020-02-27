@@ -1,3 +1,15 @@
+function openSB(dogID) {
+    document.getElementById("sidebarpopup").style.width = "550px";
+    document.getElementById("main").style.marginLeft = "550px";
+  }
+  
+  function closeSB() {
+    document.getElementById("sidebarpopup").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  }
+
+
+
 let alldogs=[];
 
 // Fetch all dogs when the page loads, and display it
