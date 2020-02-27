@@ -7,7 +7,7 @@ $connection = mysqli_connect($hostname, $databaseuser, $databasepw, $databasenam
 $dogArray = array();
 // echo json_encode($_POST);
 
-if($result = $connection->query("SELECT * FROM doggos where id=1")){
+if($result = $connection->query("SELECT * FROM doggos where id=2")){
     while($row = $result->fetch_array(MYSQLI_ASSOC)){
         // $dogArray[] = $row;
         $dogArray = $row;

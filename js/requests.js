@@ -16,11 +16,11 @@ function getAllDogs(){
 }
 
 // Get one dog
-function getDog(id){
+function getDog(){
     return $.ajax({
-        url: `getDog.php?`,
-        method: 'POST',
-        data: id
+        url: `getDog.php`,
+        method: 'GET',
+        // data: id
       })
 }
 

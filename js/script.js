@@ -2,7 +2,7 @@
     const $allDogs = $('#all-dogs');
 
     function openSB(dogID) {
-        const SBcontent = SideBar(dogID);
+        setupProfile(dogID);
         document.getElementById("sidebarpopup").innerHTML = SBcontent;
         document.getElementById("sidebarpopup").style.width = "550px";
         // document.getElementById("main").style.marginLeft = "550px";
@@ -43,13 +43,13 @@
         const profile = Profile(dog)
        
         // show side bar when it's clicked on
-        profile.find('.row').on('click',
-        function(){
+        // profile.find('.row').on('click',
+        // function(){
             // get the dog's detail profile
-            getDog(dog.id)
+            getDog(dog)
             .then(dog => {
                 // insert the profile into sidebar
-                console.log('single dog',dog)
+                console.log('single dog')
                 const sidebar = SideBar(dog)
                 // sidebar slides in
                 $('sidebarpopup').empty().append(sidebar)
