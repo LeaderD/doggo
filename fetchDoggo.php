@@ -15,10 +15,3 @@ if($result = $connection->query("SELECT id, img, name, breed, age, gender, size,
 $result->close();
 $connection->close();
 ?>
-
-<!DOCTYPE html>
-<html>
-    <body>
-        <img src=
-    </body>
-</html>
