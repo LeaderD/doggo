@@ -42,7 +42,7 @@
 <script src="./js/jquery-3.4.1.js"></script>
 <script src="./js/elements.js"></script>
 <script src="./js/requests.js"></script>
-<script src="./js/script.js"></script>
+<script src="./js/script.js"></script>  
 
 </body>
 </html>
