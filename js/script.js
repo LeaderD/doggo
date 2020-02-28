@@ -9,7 +9,7 @@
             $('#sidebarpopup').empty().append(sbdog)
         })
         // document.getElementById("sidebarpopup").innerHTML = SBcontent;
-        document.getElementById("sidebarpopup").style.width = "550px";
+        document.getElementById("sidebarpopup").style.width = "30%";
         // document.getElementById("main").style.marginLeft = "550px";
     }
     
