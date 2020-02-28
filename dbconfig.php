@@ -3,7 +3,7 @@
     $hostname = "localhost";
     $databasename = "doggo";
     $databaseuser = "root";
-    $databasepw = "123";
+    $databasepw = "root";
 
 interface Database {
    public function connection($hostname, $databaseuser, $databasepw, $databasename);

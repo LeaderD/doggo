@@ -2,8 +2,13 @@
     const $allDogs = $('#all-dogs');
 
     function openSB(dogID) {
-        setupProfile(dogID);
-        document.getElementById("sidebarpopup").innerHTML = SBcontent;
+        getDog(dogID)
+        .then(dog => {
+            console.log('sb dog',JSON.parse(dog))
+            const sbdog = SideBar(JSON.parse(dog))
+            $('#sidebarpopup').empty().append(sbdog)
+        })
+        // document.getElementById("sidebarpopup").innerHTML = SBcontent;
         document.getElementById("sidebarpopup").style.width = "550px";
         // document.getElementById("main").style.marginLeft = "550px";
     }
@@ -46,15 +51,15 @@
         // profile.find('.row').on('click',
         // function(){
             // get the dog's detail profile
-            getDog(dog)
-            .then(dog => {
-                // insert the profile into sidebar
-                console.log('single dog')
-                const sidebar = SideBar(dog)
-                // sidebar slides in
-                $('sidebarpopup').empty().append(sidebar)
-            })
-        })
+        //     getDog(dog)
+        //     .then(dog => {
+        //         // insert the profile into sidebar
+        //         console.log('single dog')
+        //         const sidebar = SideBar(dog)
+        //         // sidebar slides in
+        //         $('sidebarpopup').empty().append(sidebar)
+        //     })
+        // })
        
         return profile;
     }
