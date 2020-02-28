@@ -148,9 +148,10 @@ h2.about {
   line-height: 0px;
   z-index: 4;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  left: 30px;
   box-shadow: 5px 5px 5px #999999;
+  border: 0;
 }
 
 #addDogForm {
