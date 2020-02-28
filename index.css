@@ -5,6 +5,32 @@ body {
   background-color: rgb(240,240,240);
 }
 
+header {
+  width: 50%;
+  max-width: 1000px;
+  margin: 40px auto 100px auto;
+}
+
+header h1 {
+  
+  font-size: 3em;
+  text-align: center;
+}
+
+hr {
+  width: 100%;
+  border: solid 2px rgb(255, 191, 53);
+}
+
+header a {
+  color: #008080;
+  font-weight: bold;
+}
+
+header h4 {
+
+}
+
 .logo-name {
   position: absolute;
   float: left;
