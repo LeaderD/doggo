@@ -16,10 +16,10 @@ function Profile(dog) {
 function SideBar(dog){
     return $(`
 <a href="javascript:void(0)" class="closebtn" onclick="closeSB()">×</a>
-  <img src=" ${dog.img}" width="550">
+  <img src=" ${dog.img}" width="100%">
   <div class="sb-des">
     <h1 class="name_breed"> ${dog.name} - ${dog.breed} </h1>
-    <h3>  ${dog.age} old • ${dog.gender} • ${dog.coat} • ${dog.size}</h3>
+    <h3>  ${dog.age} years old • ${dog.gender} • ${dog.coat} • ${dog.size}</h3>
     <p>${dog.description}</p>
     <button type="button" class="button"> Adopt Me!  </button>
   </div>

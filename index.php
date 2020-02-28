@@ -24,6 +24,15 @@
   </div>
 </div>
 
+<header>
+  <h1>Doggo</h1>
+  <hr>
+  <h4>
+    We are a non-profit organization that rescues neglected or homeless dogs. Our dogs are cared for in loving foster homes until they are found suitable and caring permanent homes, giving them a second chance for a better life.
+  </h4>
+  <p>For inquiry, please email us at <a href="mailto:doggo@doggo.com"> info@doggo.com </a></p>
+</header>
+
 
 <div id="all-dogs">
 
