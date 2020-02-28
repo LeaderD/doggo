@@ -73,7 +73,7 @@ if(isset($_POST['submit'])){
         <link rel="stylesheet" href="index.css">
         <script src="./js/script.js"></script>
         </head>
-    <body style="background: rgba(0, 0, 0, 0.75);">
+    <body >
        
         </body>
         </html>
