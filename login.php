@@ -58,18 +58,23 @@ if(isset($_POST['submit'])){
         }
         $stmt->close();
     } else {
-        echo "u didnt write anything nob";
+        // echo "u didnt write anything nob";
     }
 
 ?>
 
 <!DOCTYPE html>
 <html>
+    <head> 
+        <link rel="stylesheet" href="index.css">
     <body>
+        <div id="loginForm">
+            <h2> Login </h2>
         <form action="login.php" method="POST">
             <input  type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <input type="submit" name="submit">
         </form>
+        </div>
     </body>
 </html>

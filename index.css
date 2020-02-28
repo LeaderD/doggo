@@ -210,3 +210,7 @@ h2.about {
   background-color: #929292;
   color: white;
 }
+
+#loginForm {
+  background-color: pink;
+}
