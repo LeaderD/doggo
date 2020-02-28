@@ -22,17 +22,17 @@ public function __construct($img, $name, $breed, $age, $gender, $size, $coat, $d
     $this -> coat = $coat;
     $this -> description = $description;
 
-    echo "constructor works";
+    // echo "constructor works";
 }
 
 public function connection($hostname, $databaseuser, $databasepw, $databasename){
     $connection = mysqli_connect($hostname, $databaseuser, $databasepw, $databasename);
     return $connection;
-    echo "connected";
+    // echo "connected";
 } 
 
 public function addDoggo($hostname, $databaseuser, $databasepw, $databasename){
-    echo "addDoggo";
+    // echo "addDoggo";
     $connection = $this->connection($hostname, $databaseuser, $databasepw, $databasename);
 
     $stmt = $connection->prepare("INSERT INTO doggos(img, name, breed, age, gender, size, coat, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
@@ -44,7 +44,7 @@ public function addDoggo($hostname, $databaseuser, $databasepw, $databasename){
 
     $connection->close();
 
-    echo "Added doggo!";
+    // echo "Added doggo!";
     }
 }
 
@@ -58,22 +58,19 @@ if(isset($_POST['submit'])){
     $coat = $_POST['coat'];
     $description = $_POST['description'];
 
-    echo "post Doggo";
+    // echo "post Doggo";
+
+
 
     $addDoggo = new Doggo($img, $name, $breed, $age, $gender, $size, $coat, $description);
 
     $addDoggo -> addDoggo($hostname, $databaseuser, $databasepw, $databasename);
+    
+    header("Location: index.php");
+    // echo"<script> function submitForm() { document.getElementById('addDogForm-bg').style.visibility='hidden';} </script>";
+    
+        // echo "<?php echo '$_SERVER['PHP_SELF'];'
 }
 
 
 ?>
-<!DOCTYPE html>
-    <html>
-        <head>
-        <link rel="stylesheet" href="index.css">
-        <script src="./js/script.js"></script>
-        </head>
-    <body >
-       
-        </body>
-        </html>

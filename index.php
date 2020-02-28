@@ -16,6 +16,7 @@
       <div class="logo-name">
         <text>Doggo</text>
       </div>
+      <li><a onclick="openLogin(this)">Login</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#donate">Donate</a></li>
       <li><a href="#home">Home</a></li>
@@ -32,7 +33,21 @@
 <div id="sidebarpopup" class="sidebar">
   
 </div>
-
+<div id="loginBG" style="visibility:hidden;">
+<div id="loginForm">
+            <h2> Login </h2>
+        <form action="login.php" method="POST">
+            <label> Username: </label>
+            <input  type="text" name="username" placeholder="Username" required>
+            <label> Password: </label>
+            <input type="password" name="password" placeholder="Password" required>
+            <div id="buttons">
+            <input onclick="closeLogin()" type="button" name="cancel" value="Cancel" id="cancelLogin">
+            <input type="submit" name="submit" value="Log In" id="submitLogin">
+</div>
+        </form>
+</div>
+</div>
 
 
 <div id="addDog" onclick="openForm()"> 

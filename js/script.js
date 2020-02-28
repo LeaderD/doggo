@@ -39,6 +39,13 @@
         document.getElementById("addDogForm-bg").style.visibility = "hidden";
     }
 
+    function openLogin(){
+        document.getElementById("loginBG").style.visibility = "visible";
+    }
+
+    function closeLogin(){
+        document.getElementById("loginBG").style.visibility = "hidden";
+    }
     let alldogs=[];
 
     // Fetch all dogs when the page loads, and display it

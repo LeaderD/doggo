@@ -278,6 +278,53 @@ h2.about {
   color: white;
 }
 
+#loginBG {
+  background-color: rgba(0,0,0,0.4);
+  padding: 50px;
+  position: absolute;
+  top:0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+}
+
 #loginForm {
-  background-color: pink;
+  background-color: white;
+  /* padding: 30px;
+  padding-top: 0; */
+  border-radius: 20px;
+  width: 50%;
+  position: absolute;
+  left: 25%;
+}
+
+#loginForm h2 {
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  background-color: #008080;
+  color: white;
+  border-radius: 20px 20px 0px 0px;
+}
+
+#loginForm form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+#loginForm input, select {
+  margin: 5px;
+  padding: 10px;
+}
+
+#loginForm  #submitLogin {
+  background-color: #008080;
+  color: white;
+}
+
+#loginForm  #cancelLogin {
+  background-color: #929292;
+  color: white;
 }

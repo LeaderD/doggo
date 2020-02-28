@@ -38,7 +38,8 @@ if(isset($_POST['submit'])){
             // echo $userpassword;
             // echo "</br>";
             if($userpassword === $password) {
-                echo 'Welcome '.$username .'!';
+                header("Location: index.php");
+                // echo 'Welcome '.$username .'!';
             } else {
                 echo 'Incorrect password!';
             }
@@ -62,19 +63,3 @@ if(isset($_POST['submit'])){
     }
 
 ?>
-
-<!DOCTYPE html>
-<html>
-    <head> 
-        <link rel="stylesheet" href="index.css">
-    <body>
-        <div id="loginForm">
-            <h2> Login </h2>
-        <form action="login.php" method="POST">
-            <input  type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" name="submit">
-        </form>
-        </div>
-    </body>
-</html>
