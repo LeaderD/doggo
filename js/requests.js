@@ -16,11 +16,11 @@ function getAllDogs(){
 }
 
 // Get one dog
-function getDog(){
+function getDog(id){
     return $.ajax({
         url: `getDog.php`,
-        method: 'GET',
-        // data: id
+        method: 'POST',
+        data: JSON.stringify({id:id})
       })
 }
 
@@ -31,4 +31,13 @@ function createProfile(data){
         data: data,
         url: 'addDoggo.php'
       })
+}
+
+// delete a dog
+function deleteProfile(id){
+  return $.ajax({
+    url: `deleteDog.php`,
+    method: 'POST',
+    data: JSON.stringify({id:id})
+  })
 }

@@ -73,45 +73,7 @@ if(isset($_POST['submit'])){
         <link rel="stylesheet" href="index.css">
         <script src="./js/script.js"></script>
         </head>
-    <body style="background: rgba(0, 0, 0, 0.75);">
-        <div id="addDogForm" style="visibility:hidden;">
-        <h2> Add a Dog </h2>
-        <form action="addDoggo.php" method="POST"> 
-            <label> Image </label>
-            <input type="text" name="img" placeholder="Image URL">
-            <label> Name </label>
-            <input type="text" name="name" placeholder="Name">
-            <label> Breed </label>
-            <input type="text" name="breed" placeholder="Breed">
-            <label> Age </label>
-            <input type="text" name="age" placeholder="Age">
-            <label> Gender </label>
-            <select name="gender">
-                <option value="Select"> Select Gender </option>
-                <option value="Male"> Male </option>
-                <option value="Female"> Female </option>
-            </select>
-            <label> Size </label>
-            <select name="size">
-                <option value="Select"> Select Size </option>
-                <option value="Small"> Small </option>
-                <option value="Medium"> Medium </option>
-                <option value="Large"> Large </option>
-            </select>
-            <label> Coat Type </label>
-            <select name="coat">
-                <option value="Select"> Select Coat Type </option>
-                <option value="Short"> Short </option>
-                <option value="Medium"> Medium </option>
-                <option value="Long"> Long </option>
-            </select>
-            <label> Description </label>
-            <textarea name="description" id="description" placeholder="Description" rows="10" cols="40"></textarea>
-            <div id="buttons">
-            <input onclick="closeForm()" type="button" name="cancel" id="cancel" value="Cancel">
-            <input type="submit" name="submit" id="submit" value="Add Dog">
-            </div>
-            </form>
-            </div>
+    <body >
+       
         </body>
         </html>

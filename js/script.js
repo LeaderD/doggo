@@ -1,24 +1,42 @@
 
     const $allDogs = $('#all-dogs');
+    // Delete function
+    function deleteDog(dogID){
+        deleteProfile(dogID)
+        getAllDogs()
+        .then(dogs => {
+            alldogs = dogs
+            console.log('getAllDogs',alldogs)
+            displayProfile(alldogs)
+        })
+        .catch(error=>{
+            console.log("error",error)
+        })
+    }
 
     function openSB(dogID) {
-        setupProfile(dogID);
-        document.getElementById("sidebarpopup").innerHTML = SBcontent;
-        document.getElementById("sidebarpopup").style.width = "550px";
+        getDog(dogID)
+        .then(dog => {
+            console.log('sb dog',JSON.parse(dog))
+            const sbdog = SideBar(JSON.parse(dog))
+            $('#sidebarpopup').empty().append(sbdog)
+        })
+        // document.getElementById("sidebarpopup").innerHTML = SBcontent;
+        document.getElementById("sidebarpopup").style.width = "30%";
         // document.getElementById("main").style.marginLeft = "550px";
     }
-    
+
     function closeSB() {
         document.getElementById("sidebarpopup").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";
     }
     
     function openForm(){
-        document.getElementById("addDogForm").style.visibility = "visible";
+        document.getElementById("addDogForm-bg").style.visibility = "visible";
     }
 
     function closeForm(){
-        document.getElementById("addDogForm").style.visibility = "hidden";
+        document.getElementById("addDogForm-bg").style.visibility = "hidden";
     }
 
     let alldogs=[];
@@ -48,20 +66,5 @@
     function setupProfile(dog){
         // create the profile
         const profile = Profile(dog)
-       
-        // show side bar when it's clicked on
-        // profile.find('.row').on('click',
-        // function(){
-            // get the dog's detail profile
-            getDog(dog)
-            .then(dog => {
-                // insert the profile into sidebar
-                console.log('single dog')
-                const sidebar = SideBar(dog)
-                // sidebar slides in
-                $('sidebarpopup').empty().append(sidebar)
-            })
-        }
-       
         return profile;
     }
