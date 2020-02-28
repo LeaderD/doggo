@@ -32,3 +32,12 @@ function createProfile(data){
         url: 'addDoggo.php'
       })
 }
+
+// delete a dog
+function deleteProfile(id){
+  return $.ajax({
+    url: `deleteDog.php`,
+    method: 'POST',
+    data: JSON.stringify({id:id})
+  })
+}

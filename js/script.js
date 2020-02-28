@@ -1,5 +1,18 @@
 
     const $allDogs = $('#all-dogs');
+    // Delete function
+    function deleteDog(dogID){
+        deleteProfile(dogID)
+        getAllDogs()
+        .then(dogs => {
+            alldogs = dogs
+            console.log('getAllDogs',alldogs)
+            displayProfile(alldogs)
+        })
+        .catch(error=>{
+            console.log("error",error)
+        })
+    }
 
     function openSB(dogID) {
         getDog(dogID)
@@ -12,7 +25,7 @@
         document.getElementById("sidebarpopup").style.width = "30%";
         // document.getElementById("main").style.marginLeft = "550px";
     }
-    
+
     function closeSB() {
         document.getElementById("sidebarpopup").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";

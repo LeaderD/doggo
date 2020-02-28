@@ -1,12 +1,13 @@
 function Profile(dog) {
     return $(`
-  <div class="row card" onclick="openSB(${dog.id})">
-        <div class="profile-pic" style="background-image:url(${dog.img})"></div>
+  <div class="row card">
+        <div class="profile-pic" style="background-image:url(${dog.img})" onclick="openSB(${dog.id})"></div>
         <div class="dog-des">
           <h2>${dog.name}</h2>
           <h3>Age: ${dog.age}</h3>
           <h3>Breed: ${dog.breed}</h3> 
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+          <button type="button" id="del-but" onclick="deleteDog(${dog.id})">Delete profile</button>
         </div>
   </div>
     `)
