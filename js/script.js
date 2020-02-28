@@ -12,7 +12,10 @@
         document.getElementById("sidebarpopup").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";
     }
+    
+    function openForm(){
 
+    }
 
     let alldogs=[];
 
@@ -54,7 +57,7 @@
                 // sidebar slides in
                 $('sidebarpopup').empty().append(sidebar)
             })
-        })
+        }
        
         return profile;
     }

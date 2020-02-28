@@ -10,7 +10,7 @@ if ($connection->connect_error) {
 
 $dogArray = array();
 
-if($result = $connection->query("SELECT id, img, name, breed, age, gender, size, coat, description FROM doggos")){
+if($result = $connection->query("SELECT id, img, name, breed, age, gender, size, coat, description WHERE deleted = 0 FROM doggos")){
     while($row = $result->fetch_array(MYSQLI_ASSOC)){
         $dogArray[] = $row;
     }

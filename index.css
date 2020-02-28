@@ -135,6 +135,76 @@ h2.about {
   text-align: center;
   cursor: pointer;
   display:flex;
+}
 
-  
+#addDog button {
+  background-color: teal;
+  color: white;
+  width: 60px;  
+  height: 60px;
+  text-align: center;
+  font-size: 25pt;
+  border-radius: 50%;
+  line-height: 0px;
+  z-index: 4;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 5px 5px 5px #999999;
+}
+
+#addDogForm {
+  background-color: white;
+  /* padding: 30px;
+  padding-top: 0; */
+  border-radius: 20px;
+  width: 50%;
+  position: absolute;
+  left: 25%;
+}
+
+#addDogForm h2{
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  background-color: #008080;
+  color: white;
+  border-radius: 20px 20px 0px 0px;
+}
+
+#addDogForm form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#addDogForm input, select {
+  margin: 5px;
+  padding: 5px;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#buttons > input{
+  border-radius: 10px;
+  border: 0;
+  padding: 15px;
+  font-size: 14pt;
+  text-align: center;
+  width: 75%;
+}
+
+#addDogForm  #submit {
+  background-color: #008080;
+  color: white;
+}
+
+#addDogForm  #cancel {
+  background-color: #929292;
+  color: white;
 }
