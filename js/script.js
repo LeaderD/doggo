@@ -17,7 +17,14 @@
         document.getElementById("sidebarpopup").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";
     }
+    
+    function openForm(){
+        document.getElementById("addDogForm").style.visibility = "visible";
+    }
 
+    function closeForm(){
+        document.getElementById("addDogForm").style.visibility = "hidden";
+    }
 
     let alldogs=[];
 
@@ -46,20 +53,5 @@
     function setupProfile(dog){
         // create the profile
         const profile = Profile(dog)
-       
-        // show side bar when it's clicked on
-        // profile.find('.row').on('click',
-        // function(){
-            // get the dog's detail profile
-        //     getDog(dog)
-        //     .then(dog => {
-        //         // insert the profile into sidebar
-        //         console.log('single dog')
-        //         const sidebar = SideBar(dog)
-        //         // sidebar slides in
-        //         $('sidebarpopup').empty().append(sidebar)
-        //     })
-        // })
-       
         return profile;
     }
