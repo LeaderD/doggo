@@ -210,6 +210,17 @@ h2.about {
   border: 0;
 }
 
+#addDogForm-bg {
+  background-color: rgba(0,0,0,0.4);
+  padding: 50px;
+  position: absolute;
+  top:0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+}
+
 #addDogForm {
   background-color: white;
   /* padding: 30px;

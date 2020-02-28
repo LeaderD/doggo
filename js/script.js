@@ -32,11 +32,11 @@
     }
     
     function openForm(){
-        document.getElementById("addDogForm").style.visibility = "visible";
+        document.getElementById("addDogForm-bg").style.visibility = "visible";
     }
 
     function closeForm(){
-        document.getElementById("addDogForm").style.visibility = "hidden";
+        document.getElementById("addDogForm-bg").style.visibility = "hidden";
     }
 
     let alldogs=[];
