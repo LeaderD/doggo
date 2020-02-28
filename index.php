@@ -15,6 +15,7 @@
     <ul>
       <div class="logo-name">
         <text>Doggo</text>
+        <img src="img/White_paw_print.png">
       </div>
       <li><a onclick="openLogin(this)">Login</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -25,15 +26,20 @@
 </div>
 
 <header>
+  <div id="headerCont">
+  <div id="headertitle">
   <h1>Doggo</h1>
+  <img src="img/White_paw_print.png">
+</div>
   <hr>
   <h4>
     We are a non-profit organization that rescues neglected or homeless dogs. Our dogs are cared for in loving foster homes until they are found suitable and caring permanent homes, giving them a second chance for a better life.
   </h4>
-  <p>For inquiry, please email us at <a href="mailto:doggo@doggo.com"> info@doggo.com </a></p>
+  <p>For inquiries, please email us at <a href="mailto:doggo@doggo.com"> info@doggo.com </a></p>
+</div>
 </header>
 
-
+<h2 class="siteHead"> Adoptable Dogs </h2>
 <div id="all-dogs">
 
 </div> 
@@ -106,6 +112,14 @@
 </div>
 </div>
 
+<footer>
+  <a name="donate"></a>
+  <h2> Donate </h2>
+  <hr>
+  <h4> If you would like to help Doggo and the rescued dogs, please click below to donate. </h4>
+
+  <button id="donateBut"> DONATE </button>
+</footer>
 
 <script src="./js/jquery-3.4.1.js"></script>
 <script src="./js/elements.js"></script>

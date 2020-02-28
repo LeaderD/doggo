@@ -6,7 +6,7 @@ function Profile(dog) {
           <h2>${dog.name}</h2>
           <h3>Age: ${dog.age}</h3>
           <h3>Breed: ${dog.breed}</h3> 
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+          <p>${dog.description}</p>
           <button type="button" id="del-but" onclick="deleteDog(${dog.id})">Delete profile</button>
         </div>
   </div>

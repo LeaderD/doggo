@@ -46,6 +46,10 @@
     function closeLogin(){
         document.getElementById("loginBG").style.visibility = "hidden";
     }
+
+    function donateScroll() {
+        window.scrollBy(0, 1000);
+      }
     let alldogs=[];
 
     // Fetch all dogs when the page loads, and display it
