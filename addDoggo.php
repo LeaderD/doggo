@@ -105,9 +105,9 @@ if(isset($_POST['submit'])){
                 <option value="Long"> Long </option>
             </select>
             <label> Description </label>
-            <textarea name="description" id="description" placeholder="Description" rows="4" cols="40"></textarea>
+            <textarea name="description" id="description" placeholder="Description" rows="10" cols="40"></textarea>
             <div id="buttons">
-            <input type="button" name="cancel" id="cancel" value="Cancel">
+            <input onclick="closeForm()" type="button" name="cancel" id="cancel" value="Cancel">
             <input type="submit" name="submit" id="submit" value="Add Dog">
             </div>
             </form>

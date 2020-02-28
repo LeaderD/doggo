@@ -166,7 +166,7 @@ h2.about {
 #addDogForm h2{
   text-align: center;
   margin: 0;
-  padding: 10px;
+  padding: 20px;
   background-color: #008080;
   color: white;
   border-radius: 20px 20px 0px 0px;
@@ -188,6 +188,7 @@ h2.about {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding-top: 20px;
 }
 
 #buttons > input{
